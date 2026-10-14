@@ -1,0 +1,521 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+
+  /* Sidebar */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Core Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+
+  /* Secondary */
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  /* Muted */
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Borders */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Status */
+  --color-destructive: var(--destructive);
+
+  /* Custom Typography */
+  --color-title: var(--title);
+  --color-subtitle: var(--subtitle);
+  --color-body: var(--body);
+  --color-hover-text: var(--hover-text);
+
+  /* Custom Buttons */
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-button-text: var(--button-text);
+
+  --color-button-hover-1: var(--button-hover-1);
+  --color-button-hover-1-foreground: var(--button-hover-1-foreground);
+
+  /* Links */
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+
+  /* Gold Palette */
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-champagne: var(--champagne);
+  --color-ivory: var(--ivory);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* =========================================================
+   LIGHT THEME — PREMIUM GOLD & IVORY
+========================================================= */
+
+:root {
+  color-scheme: light;
+
+  /* Brand Colors */
+  --primary: #b8860b;
+  --primary-hover: #96700a;
+  --primary-active: #805f08;
+  --primary-light: #f8eecf;
+  --primary-foreground: #ffffff;
+
+  /* Gold Palette */
+  --gold: #b8860b;
+  --gold-light: #f8eecf;
+  --gold-dark: #805f08;
+  --champagne: #d4af37;
+  --ivory: #fffcf5;
+
+  /* Background */
+  --background: #fffcf5;
+  --foreground: #211b12;
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #211b12;
+
+  /* Popover */
+  --popover: #ffffff;
+  --popover-foreground: #211b12;
+
+  /* Secondary */
+  --secondary: #f8f3e8;
+  --secondary-foreground: #45371f;
+
+  /* Muted */
+  --muted: #f5f0e5;
+  --muted-foreground: #766b58;
+
+  /* Accent */
+  --accent: #f8eecf;
+  --accent-foreground: #805f08;
+
+  /* Border & Input */
+  --border: #e9dfc5;
+  --input: #e9dfc5;
+
+  /* Focus Ring */
+  --ring: #b8860b;
+
+  /* Status */
+  --success: #21865b;
+  --warning: #c28a12;
+  --destructive: #dc3545;
+  --info: #3675c5;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Charts */
+  --chart-1: #b8860b;
+  --chart-2: #d4af37;
+  --chart-3: #96700a;
+  --chart-4: #e8c96a;
+  --chart-5: #805f08;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #211b12;
+
+  --sidebar-primary: #b8860b;
+  --sidebar-primary-foreground: #ffffff;
+
+  --sidebar-border: #e9dfc5;
+  --sidebar-ring: #b8860b;
+
+  /* Button Hover */
+  --button-hover-1: #f8eecf;
+  --button-hover-1-foreground: #805f08;
+
+  --hover: #f8eecf;
+
+  /* Typography */
+  --title: #805f08;
+  --subtitle: #b8860b;
+  --hover-text: #96700a;
+  --body: #766b58;
+
+  /* Buttons */
+  --button: #b8860b;
+  --button-hover: #96700a;
+  --button-text: #ffffff;
+
+  /* Links */
+  --link: #96700a;
+  --link-hover: #805f08;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #b8860b 0%,
+    #d4af37 50%,
+    #b8860b 100%
+  );
+
+  --gradient-secondary: linear-gradient(135deg, #f8eecf 0%, #e8c96a 100%);
+
+  --gradient-dark: linear-gradient(135deg, #805f08 0%, #b8860b 100%);
+
+  --gradient-luxury: linear-gradient(
+    135deg,
+    #805f08 0%,
+    #d4af37 45%,
+    #f8eecf 50%,
+    #d4af37 55%,
+    #805f08 100%
+  );
+}
+
+/* =========================================================
+   GRADIENT UTILITIES
+========================================================= */
+
+@layer utilities {
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background-image: var(--gradient-secondary);
+  }
+
+  .bg-gradient-dark {
+    background-image: var(--gradient-dark);
+  }
+
+  .bg-gradient-luxury {
+    background-image: var(--gradient-luxury);
+  }
+
+  .text-gradient-gold {
+    background-image: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .border-gradient-gold {
+    border-color: var(--gold);
+  }
+
+  .shadow-gold {
+    box-shadow: 0 8px 24px rgb(184 134 11 / 14%);
+  }
+
+  .shadow-gold-lg {
+    box-shadow: 0 12px 32px rgb(184 134 11 / 20%);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 20px rgb(212 175 55 / 25%);
+  }
+
+  .bg-gold-subtle {
+    background-color: var(--gold-light);
+  }
+}
+
+/* =========================================================
+   DARK THEME — BLACK & GOLD LUXURY
+========================================================= */
+
+.dark {
+  color-scheme: dark;
+
+  /* Background */
+  --background: #15120c;
+  --foreground: #f9f3e5;
+
+  /* Card */
+  --card: #201b12;
+  --card-foreground: #f9f3e5;
+
+  /* Popover */
+  --popover: #201b12;
+  --popover-foreground: #f9f3e5;
+
+  /* Brand */
+  --primary: #d4af37;
+  --primary-hover: #e8c96a;
+  --primary-active: #f0d98a;
+  --primary-light: #352b16;
+  --primary-foreground: #211b12;
+
+  /* Gold Palette */
+  --gold: #d4af37;
+  --gold-light: #352b16;
+  --gold-dark: #e8c96a;
+  --champagne: #f0d98a;
+  --ivory: #15120c;
+
+  /* Secondary */
+  --secondary: #2b2418;
+  --secondary-foreground: #f9f3e5;
+
+  /* Muted */
+  --muted: #2b2418;
+  --muted-foreground: #c4b99f;
+
+  /* Accent */
+  --accent: #352b16;
+  --accent-foreground: #e8c96a;
+
+  /* Borders & Input */
+  --border: #403522;
+  --input: #403522;
+
+  /* Ring */
+  --ring: #d4af37;
+
+  /* Status */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --destructive: #f87171;
+  --info: #60a5fa;
+
+  /* Charts */
+  --chart-1: #d4af37;
+  --chart-2: #e8c96a;
+  --chart-3: #b8860b;
+  --chart-4: #f0d98a;
+  --chart-5: #96700a;
+
+  /* Sidebar */
+  --sidebar: #201b12;
+  --sidebar-foreground: #f9f3e5;
+
+  --sidebar-primary: #d4af37;
+  --sidebar-primary-foreground: #211b12;
+
+  --sidebar-border: #403522;
+  --sidebar-ring: #d4af37;
+
+  /* Button Hover */
+  --button-hover-1: #352b16;
+  --button-hover-1-foreground: #e8c96a;
+
+  --hover: #352b16;
+
+  /* Typography */
+  --title: #e8c96a;
+  --subtitle: #d4af37;
+  --hover-text: #f0d98a;
+  --body: #c4b99f;
+
+  /* Buttons */
+  --button: #d4af37;
+  --button-hover: #e8c96a;
+  --button-text: #211b12;
+
+  /* Links */
+  --link: #e8c96a;
+  --link-hover: #f0d98a;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #b8860b 0%,
+    #d4af37 50%,
+    #e8c96a 100%
+  );
+
+  --gradient-secondary: linear-gradient(135deg, #352b16 0%, #49391a 100%);
+
+  --gradient-dark: linear-gradient(135deg, #805f08 0%, #d4af37 100%);
+
+  --gradient-luxury: linear-gradient(
+    135deg,
+    #805f08 0%,
+    #d4af37 45%,
+    #f0d98a 50%,
+    #d4af37 55%,
+    #805f08 100%
+  );
+}
+
+/* =========================================================
+   BASE STYLES
+========================================================= */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--gold-light);
+    color: var(--foreground);
+  }
+}
+
+/* =========================================================
+   SWIPER PAGINATION
+========================================================= */
+
+.swiper-pagination-bullet {
+  background: #dccb9c;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--gold) !important;
+  width: 22px;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border: 2px solid var(--background);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--background);
+}
+
+/* =========================================================
+   ORDER BUTTON ANIMATION
+========================================================= */
+
+@layer utilities {
+  @keyframes orderRing {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    8% {
+      transform: translateX(-7px);
+    }
+
+    16% {
+      transform: translateX(7px);
+    }
+
+    24% {
+      transform: translateX(-7px);
+    }
+
+    32% {
+      transform: translateX(7px);
+    }
+
+    40% {
+      transform: translateX(-5px);
+    }
+
+    48% {
+      transform: translateX(5px);
+    }
+
+    56% {
+      transform: translateX(0);
+    }
+  }
+
+  .order-ring {
+    animation: orderRing 2s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
