@@ -24,7 +24,7 @@ const popularSearches = [
   'Speaker',
 ];
 
-const SearchBar = () => {
+const SearchBar = ({ mobileOpen }: { mobileOpen: boolean }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [products, setProducts] = useState<IProduct[]>([]);
   const [loading, setLoading] = useState(false);
@@ -90,7 +90,15 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-full relative" ref={searchRef}>
+    <div
+      id="mobile-search"
+      className={`relative w-full overflow-visible transition-[max-height,opacity,transform,padding] duration-300 ease-out md:max-h-none md:translate-y-0 md:py-0 md:opacity-100 md:pointer-events-auto ${
+        mobileOpen
+          ? 'max-h-16 translate-y-0 py-2 opacity-100 pointer-events-auto'
+          : 'max-h-0 -translate-y-2 py-0 opacity-0 pointer-events-none'
+      }`}
+      ref={searchRef}
+    >
       {/* Search Box */}
       <div className="flex-1 w-full mx-0 md:mx-4">
         <div className="relative flex w-full items-stretch group">
@@ -103,7 +111,7 @@ const SearchBar = () => {
                 setIsOpen(true);
               }}
               onFocus={() => setIsOpen(true)}
-              className="flex-1 h-11 text-sm border-r-0 rounded-l-md rounded-r-none focus:ring-2 focus:ring-orange-500/20 pr-10"
+              className="flex-1 h-11 text-sm border-r-0 rounded-l-md rounded-r-none focus:ring-2 focus:ring-[#d4af37]/30 md:focus:ring-orange-500/20 pr-10"
             />
 
             {searchQuery && (

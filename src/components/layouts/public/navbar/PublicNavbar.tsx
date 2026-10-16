@@ -1,6 +1,6 @@
 'use client';
 
-import { ShoppingCart } from 'lucide-react';
+import { Search, ShoppingCart } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
@@ -18,6 +18,7 @@ import { IUser } from '@/types/auth';
 
 const PublicNavbar = ({ className }: { className?: string }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
   // Get cart items from Zustand
   const cartItems = useCartStore(state => state.items);
@@ -46,7 +47,7 @@ const PublicNavbar = ({ className }: { className?: string }) => {
   return (
     <section
       className={cn(
-        'border-b bg-[#171717] bg-[#03071e] sticky top-0 z-50 w-full',
+        'sticky top-0 z-50 w-full border-b border-[#d4af37]/20 bg-[#17130c] text-[#f3e7c4]  md:text-inherit',
         className,
       )}
     >
@@ -61,7 +62,7 @@ const PublicNavbar = ({ className }: { className?: string }) => {
 
       <div className="container mx-auto px-3 sm:px-4">
         {/* Top Navbar */}
-        <div className="flex flex-col gap-3 py-3 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-0 py-3 md:flex-row md:items-center md:justify-between md:gap-3">
           {/* LEFT */}
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className="flex items-center gap-2">
@@ -97,10 +98,20 @@ const PublicNavbar = ({ className }: { className?: string }) => {
 
             {/* Mobile: profile + cart (right side) */}
             <div className="flex items-center gap-3 md:hidden">
+              <button
+                type="button"
+                aria-label="Toggle search"
+                aria-expanded={mobileSearchOpen}
+                aria-controls="mobile-search"
+                onClick={() => setMobileSearchOpen(open => !open)}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d4af37]/30 bg-white/5 text-[#e7c873] transition-colors hover:bg-[#d4af37]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]/60"
+              >
+                <Search className="h-5 w-5" />
+              </button>
               {user && <UserDropdown user={user} />}
               <div className="relative">
                 <Link href="/cart">
-                  <ShoppingCart className="h-5 w-5" />
+                  <ShoppingCart className="h-5 w-5 text-[#f3e7c4]" />
                   <span className="absolute -top-4 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[11px] font-bold text-white">
                     {cartCount}
                   </span>
@@ -110,7 +121,7 @@ const PublicNavbar = ({ className }: { className?: string }) => {
           </div>
 
           {/* Center: Search bar */}
-          <SearchBar />
+          <SearchBar mobileOpen={mobileSearchOpen} />
 
           {/* RIGHT DESKTOP */}
           <RightDesktopNev></RightDesktopNev>
