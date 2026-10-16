@@ -36,7 +36,7 @@ export const loginUser = async (
   console.log('result', result);
 
   if (!res.ok) {
-    throw new Error(result.message || 'Login failed');
+    throw new Error(result.error || result.message || 'Login failed');
   }
 
   return result;
