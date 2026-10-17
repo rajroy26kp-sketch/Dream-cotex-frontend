@@ -23,7 +23,7 @@ const Banner = () => {
     },
     {
       id: 4,
-      image: '/images/banner-4.png',
+      image: '/images/Banner-4.png',
       alt: 'Jewellery Collection Banner',
     },
     {
