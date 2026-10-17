@@ -22,6 +22,11 @@ const Banner = () => {
       alt: 'Jewellery Collection Banner',
     },
     {
+      id: 4,
+      image: '/images/banner-4.png',
+      alt: 'Jewellery Collection Banner',
+    },
+    {
       id: 2,
       image: '/images/banner-2.png',
       alt: 'Premium Jewellery Collection',
