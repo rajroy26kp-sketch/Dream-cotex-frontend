@@ -8,9 +8,9 @@ import GoogleTagManager from '@/components/layouts/shared/analytics/GoogleTagMan
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'Sera Place ',
+  title: 'Dream Cottagebd ',
   description:
-    'Sera Place is a growing online shopping platform offering quality products at competitive prices, from fashion and footwear to electronics and more.',
+    'Dream Cottagebd is a growing online shopping platform offering quality products at competitive prices, from fashion and footwear to electronics and more.',
 };
 
 export default function RootLayout({

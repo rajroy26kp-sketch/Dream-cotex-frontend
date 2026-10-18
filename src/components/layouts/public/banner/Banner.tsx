@@ -17,15 +17,21 @@ import Image from 'next/image';
 const Banner = () => {
   const slides = [
     {
+      id: 4,
+      image: '/images/Banner-4.png',
+      alt: 'Jewellery Collection Banner',
+    },
+    {
       id: 1,
       image: '/images/banner 1.png',
       alt: 'Jewellery Collection Banner',
     },
     {
-      id: 4,
-      image: '/images/Banner-4.png',
+      id: 5,
+      image: '/images/banner-5.png',
       alt: 'Jewellery Collection Banner',
     },
+
     {
       id: 2,
       image: '/images/banner-2.png',
