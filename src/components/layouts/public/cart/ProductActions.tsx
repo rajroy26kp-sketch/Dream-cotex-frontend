@@ -17,6 +17,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { useOrderStore } from '@/store/order.store';
 import { useProductStore } from '@/store/product.store';
+import { trackAddToCart } from '../../shared/analytics/events';
 
 type Props = {
   productId: string;
@@ -80,7 +81,24 @@ const ProductActions = ({ productId, product }: Props) => {
       }
       setLoading(true);
 
+      // add product to cart
       addToCart(product, quantity, selectedSize || null, selectedColor || null);
+
+      // Fire AddToCart analytics event
+      trackAddToCart({
+        productId: productId,
+        productName: product.name,
+        price:
+          product.specialPrice && product.specialPrice > 0
+            ? product.specialPrice
+            : product.price,
+        quantity,
+        category: product.category?.name || '',
+        brand: product.brand || '',
+        variant: `${selectedSize || ''} ${selectedColor || ''}`.trim(),
+        size: selectedSize || '',
+        color: selectedColor || '',
+      });
 
       toast.success('Added to cart!');
     } catch (error) {
